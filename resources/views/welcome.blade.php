@@ -1,21 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-    <title>Starter Template - Materialize</title>
 
-    <!-- CSS  -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="{{ URL::asset('css/materialize.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="{{ URL::asset('css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection"/>
+@extends('layout.principal')
+@section('content')
 
-</head>
-<body>
 
 <!-- barra de navegacion -->
 <nav class="orange darken-4" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">ElCaldo</a>
+    <div class="nav-wrapper container">
+        <img src="{{ URL::asset('img/caldoicon.ico') }} " class="material-icons left" width="64px">
+        <a id="logo-container" href="#" class="brand-logo">ElCaldo</a>
         <ul class="right hide-on-med-and-down">
             <li><a href="https://www.facebook.com/elcaldoapp">Facebook</a></li>
             <li><a href="https://twitter.com/caldogt">Twitter</a></li>
@@ -154,43 +146,5 @@
 <!-- footer -->
 
 
-<footer class="grey darken-2">
-    <div class="container">
-        <div class="row">
-            <div class="col 16 s12">
-                <h4 class="white-text center">ElCaldo</h4>
-                <p class="grey-text text-lighten-4 center">Sabor a eterna primavera.</p>
-                <p class="grey-text text-lighten-4 center"> Para mas información: </p>
-                <p class="grey-text text-lighten-4 center">info@elcaldogt.com</p>
-            </div>
-        </div>
 
-        <div class="center">
-            <img src="{{ URL::asset('img/icon_playstore_black_min.png') }}">
-        </div>
-
-        <div class="footer-copyright center">
-            <div class="white-text">
-                © 2016 Copyright elcaldo, All rights reserved.
-            </div>
-        </div>
-    </div>
-</footer>
-
-
-<!-- termina foot!--  Scripts-->
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="{{ URL::asset('js/materialize.js') }}"></script>
-<script src="{{ URL::asset('js/init.js') }}"></script>
-<script>
-    $(document).ready(function () {
-        $('.parallax').parallax();
-        $('.slider').slider({full_width: true});
-    });
-
-</script>
-<!-- terminar Scripts -->
-
-
-</body>
-</html>
+@stop

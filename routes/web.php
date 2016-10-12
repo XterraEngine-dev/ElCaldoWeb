@@ -11,29 +11,96 @@
 |
 */
 
+/**
+ * PAGINA DE INICIO
+ */
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+/**
+ * INICIO DE APP WEB
+ */
 Route::get('app', function (){
     return view('app');
 });
-Route::get('caldos', function (){
-    return view('caldos');
-});
-Route::get('tamales', function (){
-    return view('tamales');
-});
-Route::get('postres', function (){
-    return view('postres');
-});
-Route::get('bebidas', function (){
-    return view('bebidas');
-});
-Route::get('cocinausuario', function (){
-    return view('cocinausuario');
-});
+
+
+/**
+ * CALDOS
+ */
+
+Route::get('caldos', 'CaldosController@index');
+Route::get('caldos/{id}',[
+
+    'uses' => 'CaldosController@show',
+    'as' => 'caldos_show_path'
+
+]);
+
+/**
+ * TAMALES
+ */
+
+
+Route::get('tamales', 'TamalesController@index');
+Route::get('tamales/{id}',[
+
+    'uses' => 'TamalesController@show',
+    'as' => 'tamales_show_path'
+
+]);
+
+/**
+ * POSTRES
+ */
+
+
+Route::get('postres', 'PostresController@index');
+Route::get('postres/{id}',[
+
+    'uses' => 'PostresController@show',
+    'as' => 'postres_show_path'
+
+]);
+
+
+
+/**
+ * BEBIDAS
+ */
+
+
+Route::get('bebidas', 'BebidasController@index');
+Route::get('bebidas/{id}',[
+
+    'uses' => 'BebidasController@show',
+    'as' => 'bebidas_show_path'
+
+]);
+
+
+/**
+ * COCINA USUARIO
+ */
+
+Route::get('timeline', 'CocinausuarioController@index');
+Route::get('timeline/{id}',[
+
+    'uses' => 'CocinausuarioController@show',
+    'as' => 'cocinausuario_show_path'
+
+]);
+
+/**
+ * BUSCAR
+ */
+
 Route::get('search', function (){
     return view('search');
 });
+
 
 
